@@ -74,11 +74,11 @@ public class OpenAPIConfig {
   public OpenAPI myOpenAPI() {
     Server devServer = new Server();
     devServer.setUrl(devUrl);
-    devServer.setDescription("Server URL in Development environment");
+    devServer.setDescription("DEV");
 
     Server prodServer = new Server();
     prodServer.setUrl(prodUrl);
-    prodServer.setDescription("Server URL in Production environment");
+    prodServer.setDescription("PROD");
 
     Contact contact = new Contact();
     contact.setEmail("ram@gmail.com");

@@ -30,7 +30,7 @@ public class JenkinsController {
     })
 	@GetMapping("/jenkins-json")
 	public List<Customer> getJenkinsJson() {
-		List<Customer> asList = Arrays.asList(new Customer(1l,"ram",60000d),new Customer(1l,"ram",60000d),new Customer(1l,"ram",60000d),new Customer(1l,"ram",60000d),new Customer(1l,"ram",60000d));
+		List<Customer> asList = Arrays.asList(new Customer(1l,"ram",60000d),new Customer(2l,"mohan",60000d),new Customer(3l,"reddy",60000d),new Customer(4l,"yanumula",60000d),new Customer(5l,"bhagi",60000d));
 		return asList;
 	}
 
