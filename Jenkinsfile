@@ -18,8 +18,8 @@ pipeline {
         
         stage('Maven Compile') {
             steps {
-                bat 'mvn --version'
-                bat 'mvn clean compile -DskipTests=true'
+                sh 'mvn --version'
+                sh 'mvn clean compile -DskipTests=true'
             }
         }
         
@@ -31,7 +31,7 @@ pipeline {
         
         stage('Maven Package') {
             steps {
-                bat 'mvn clean package -DskipTests=true'
+                sh 'mvn clean package -DskipTests=true'
             }
         }
         
