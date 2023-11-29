@@ -1,4 +1,5 @@
 package com.ram.jenkins;
+
 //package com.ram.jenkins;
 //
 //import org.springframework.context.annotation.Bean;
@@ -64,40 +65,37 @@ import io.swagger.v3.oas.models.servers.Server;
 @Configuration
 public class OpenAPIConfig {
 
-  @Value("${jenkins.openapi.dev-url}")
-  private String devUrl;
+	@Value("${jenkins.openapi.dev-url}")
+	private String devUrl;
 
-  @Value("${jenkins.openapi.prod-url}")
-  private String prodUrl;
+	@Value("${jenkins.openapi.prod-url}")
+	private String prodUrl;
 
-  @Bean
-  public OpenAPI myOpenAPI() {
-    Server devServer = new Server();
-    devServer.setUrl(devUrl);
-    devServer.setDescription("DEV");
+	@Bean
+	public OpenAPI myOpenAPI() {
+		Server devServer = new Server();
+		devServer.setUrl(devUrl);
+		devServer.setDescription("DEV");
 
-    Server prodServer = new Server();
-    prodServer.setUrl(prodUrl);
-    prodServer.setDescription("PROD");
+		Server prodServer = new Server();
+		prodServer.setUrl(prodUrl);
+		prodServer.setDescription("PROD");
 
-    Contact contact = new Contact();
-    contact.setEmail("ram@gmail.com");
-    contact.setName("Spring-Boot-Jenkins");
-    contact.setUrl("https://github.com/moretolearn");
+		Contact contact = new Contact();
+		contact.setEmail("ram@gmail.com");
+		contact.setName("Spring-Boot-Jenkins");
+		contact.setUrl("https://github.com/moretolearn");
 
-    License mitLicense = new License().name("Git Hub").url("https://github.com/moretolearn");
+		License mitLicense = new License().name("Git Hub").url("https://github.com/moretolearn");
 
-    Info info = new Info()
-        .title("Spring-Boot-Jenkins")
-        .version("1.0")
-        .contact(contact)
-        .description("This API exposes endpoints to manage jenkins.").termsOfService("https://github.com/moretolearn")
-        .license(mitLicense);
+		Info info = new Info().title("Spring-Boot-Jenkins").version("1.0").contact(contact)
+				.description("This API exposes endpoints to manage jenkins.")
+				.termsOfService("https://github.com/moretolearn").license(mitLicense);
 
-    return new OpenAPI().info(info).servers(List.of(devServer, prodServer));
-  }
-  
-  // To see the docs
-  //http://localhost:8080
-  //http://localhost:8080/v3/api-docs
+		return new OpenAPI().info(info).servers(List.of(devServer, prodServer));
+	}
+
+	// To see the docs
+	// http://localhost:8080/swagger-ui/index.html
+	// http://localhost:8080/v3/api-docs
 }
