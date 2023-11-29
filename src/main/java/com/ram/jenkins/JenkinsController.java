@@ -36,6 +36,12 @@ public class JenkinsController {
 	
 	@Autowired
 	BuildProperties buildProperties;
+	
+	
+	@GetMapping
+	public String getHome() {
+		return "Wellcome to Jenkins App";
+	}
 
 	@GetMapping("/jenkins")
 	public String getJenkins() {
