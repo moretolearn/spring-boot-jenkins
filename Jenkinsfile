@@ -61,6 +61,6 @@ pipeline {
         //        //deploy adapters: [tomcat9(credentialsId: '2699a4a6-d5ea-4533-bca8-1dccf0d2a29b', path: '', url: 'http://localhost:8080')], war: '**/*.war'
         //        deploy adapters: [tomcat9(credentialsId: 'tomcat-cred', path: '', url: 'http://13.127.85.60/')], war: '**/*.war'
         //    }
-        }
+        //}
     }
 }
