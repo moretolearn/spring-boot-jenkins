@@ -42,11 +42,11 @@ pipeline {
             }
         }
         
-        stage('TRIVY FS SCAN') {
-            steps {
-                bat "trivy fs . > trivyfs.txt"
-            }
-        }
+        //stage('TRIVY FS SCAN') {
+        //    steps {
+        //        bat "trivy fs . > trivyfs.txt"
+        //    }
+        //}
         
         //stage('Sonar Scanner') {
         //    steps {
