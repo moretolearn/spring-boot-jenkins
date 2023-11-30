@@ -18,8 +18,8 @@ pipeline {
         
         stage('Maven Compile') {
             steps {
-                sh 'mvn --version'
-                sh 'mvn clean compile -DskipTests=true'
+                bat 'mvn --version'
+                bat 'mvn clean compile -DskipTests=true'
             }
         }
         
@@ -31,7 +31,7 @@ pipeline {
         
         stage('Maven Package') {
             steps {
-                sh 'mvn clean package -DskipTests=true'
+                bat 'mvn clean package -DskipTests=true'
             }
         }
         
@@ -44,7 +44,7 @@ pipeline {
         
         stage('TRIVY FS SCAN') {
             steps {
-                sh "trivy fs . > trivyfs.txt"
+                bat "trivy fs . > trivyfs.txt"
             }
         }
         
